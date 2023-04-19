@@ -3,7 +3,7 @@ $('.active-slider').slick({
     infinite : false,
     dots: true,
     autoplay: true,
-    autoplaySpeed:5000
+    autoplaySpeed: 2000
 });
 
 // start here
@@ -14,19 +14,19 @@ $('.ref-name-list li').click(function(){
     $('.referans').removeClass('active-slider'); // Remove class other elements
     $('.referans').eq(activeIndex).addClass('active-slider'); // Show Slider
     $('.slick-dots').remove(); // reinit cloned slick-dots so remove others
-    $('.komp2 .referans').slick('reinit');// Restart Slider
+    $('.sliders .referans').slick('reinit');// Restart Slider
     printActive(); sliderLength();
 });
 
 // do slider after change
-$('.komp-slider, .referans').on('afterChange', function(e, slick, currentSlide, nextSlide) {
+$('.show-slider, .referans').on('afterChange', function(e, slick, currentSlide, nextSlide) {
     printActive();
 });
 
 // Take Slider lentgh
 sliderLength();
 function sliderLength(){
-    $('.komp-slider .komp-item:visible').each(function(i){		
+    $('.show-slider .show-item:visible').each(function(i){		
         if (i < 9) {
             var dd = i+1;
             $('.max-slide').text('0' + dd)		
