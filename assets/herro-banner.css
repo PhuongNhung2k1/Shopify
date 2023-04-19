@@ -1,7 +1,16 @@
 .img-hero-banner {
     max-width: 100%;
 }
+
 /* css for hero banner.liquid  */
+.img-desktop {
+    display: block;
+}
+
+.img-mobile {
+    display: block;
+}
+
 .banner-content {
     justify-content: space-between;
     text-align: center;
@@ -34,12 +43,16 @@
      display: block !important;
     }
     .img-desktop {
-        display: none;
+        display: block;
     }
 
     .banner-content,
+    .banner-content h1,
     .banner-content a  {
          color: #fff;
+    }
+    .banner-content a {
+        border: 1px solid #ccc;
     }
     .banner-container {
         margin-left: 200px;

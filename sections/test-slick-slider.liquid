@@ -1,0 +1,73 @@
+{{ 'test-slick-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'test-slick-slider.js' | asset_url }}" defer="defer"></script>
+<div class="container special-container">
+  <div class="row ineffective-row">
+    <div class="col-md-29  ref-names">
+      <h4>REFERANSLARIMIZ</h4>
+      <ul class="ref-name-list">
+        <li>
+          <a href="javascript:void(0)">
+            Referans Ad 3
+          </a>
+        </li>
+      </ul>
+      <input
+        type="text"
+        class="active-data"
+        hidden="" />
+    </div>
+    <div class="col-md-70 ">
+      <div class="komp2 komp-slider ">
+        <div class="referans active-slider">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'type_slider' %}
+              <div class="komp-item">
+                <img src="{{ block.settings.image_choose |image_url: width: 450 }}" />
+                <div class="carausel-mask"></div>
+              </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Mutiple Slider",
+    "blocks": [
+      {
+        "type": "type_slider",
+        "name": "Add mutiple slider ...",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Title 1"
+          }, {
+            "type": "textarea",
+            "id": "subtitle1",
+            "label": "Note text 1"
+          }, {
+            "type": "image_picker",
+            "id": "image_choose",
+            "label": "image picker 1"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Test Show Slider aaaaaaaaaaaaa",
+        "blocks": [
+          {
+            "type": "type_slider"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

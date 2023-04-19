@@ -1,11 +1,10 @@
-<h2>Mutiple banner
-</h2>
-{%# can modify width for banner 1/4 or 1/2%}
-{{ 'mutiple-banner.css' | asset_url | stylesheet_tag }}
-{% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'type_banner' %}
+<h2>Test show slider</h2>
 
+{{ 'mutiple-banner.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+  {% case 'type_slider' %}
+    {% when 'text' %}
     <div class="mutiple-banner-container">
       <div class="mutiple-banner-sub">
         <div class="mutiple-banner-content">
@@ -19,16 +18,16 @@
         </div>
       </div>
     </div>
-
+{% else %}
   {% endcase %}
 {% endfor %}
 
 {% schema %}
   {
-    "name": "Mutiple Banner",
+    "name": "Mutiple Slider",
     "blocks": [
       {
-        "type": "type_banner",
+        "type": "type_slider",
         "name": "Add mutiple banner ...",
         "settings": [
           {
@@ -47,12 +46,13 @@
         ]
       }
     ],
+
     "presets": [
       {
-        "name": "Test Mutiple Banner",
+        "name": "Test Slider show",
         "blocks": [
           {
-            "type": "type_banner"
+            "type": "type_slider"
           }
         ]
       }
