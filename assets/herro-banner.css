@@ -47,8 +47,12 @@
     }
 
     .banner-content,
+    .banner-content h1,
     .banner-content a  {
          color: #fff;
+    }
+    .banner-content a {
+        border: 1px solid #ccc;
     }
     .banner-container {
         margin-left: 200px;

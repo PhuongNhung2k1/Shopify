@@ -113,13 +113,13 @@
                 -%}
                 {%# modify price sale , compare_at_price | minus:price | times:100 | divided_by:compare_at_price %}
                
-               
-                {% if product.available %}
-                {% assign price_min = product.price_min | divided_by: 100 %}
-                {% assign price = product.compare_at_price_max | divided_by: price_min %}
-                {% assign result = price %}
-                {% assign sale_price = price | divided_by: 100  %}
-                <h3> Sale: {{ sale_price  }} %</h3>
+                {% if product.compare_at_price > product.price %}
+                {% assign current_price = product.price | money_without_currency %}
+                {% assign price_compare_at = product.compare_at_price | money_with_currency %}
+                {% assign price_calcular = current_price | divided_by: price_compare_at | times:100  |round: 2 %}
+                {% assign price_sale = 100 | minus: price_calcular  %}
+              
+                <h3> Sale: {{ price_sale  }} %</h3>
             {% endif %}
 
               </div>
