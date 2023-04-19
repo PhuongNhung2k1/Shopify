@@ -1,52 +1,23 @@
 <div>Freequently Asked Question</div>
 {{ 'style.css' | asset_url | stylesheet_tag }}
-{% for block in section.blocks %}
-    {% case block.type %}
-      {% when 'text' %}
-      <p>
-        {{ block.settings.title }}</p>
-    {% endcase %}
-  {% endfor %}
+<script src="{{ 'test-qa.js' | asset_url }}" defer="defer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
 
-<ul class="question-qa">
-  <li class="quest-asked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui iure fugit pariatur corporis? Obcaecati ipsa modi, eligendi perferendis unde quam, dolor ut optio impedit reiciendis accusantium voluptate minus natus aspernatur!
-    <p class="btn-open-close" onclick="btnOpen()">OC</p>
-    <li class="quest-anser" style="display:none">
-        <p>Consequuntur, alias totam. Nesciunt quam, accusantium obcaecati dicta consequatur quas porro voluptates nostrum corrupti officia, doloribus veritatis explicabo molestias ex magnam maxime!</p>
-    </li>
-  </li>
-  <li class="quest-asked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui iure fugit pariatur corporis? Obcaecati ipsa modi, eligendi perferendis unde quam, dolor ut optio impedit reiciendis accusantium voluptate minus natus aspernatur!
-    <p class="btn-open-close" onclick="btnOpen()">OC</p>
-    <li class="quest-anser" style="display:none">
-        <p>Consequuntur, alias totam. Nesciunt quam, accusantium obcaecati dicta consequatur quas porro voluptates nostrum corrupti officia, doloribus veritatis explicabo molestias ex magnam maxime!</p>
-    </li>
-  </li>
-  <li class="quest-asked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui iure fugit pariatur corporis? Obcaecati ipsa modi, eligendi perferendis unde quam, dolor ut optio impedit reiciendis accusantium voluptate minus natus aspernatur!
-    <p class="btn-open-close" onclick="btnOpen()">OC</p>
-    <li class="quest-anser" style="display:none">
-        <p>Consequuntur, alias totam. Nesciunt quam, accusantium obcaecati dicta consequatur quas porro voluptates nostrum corrupti officia, doloribus veritatis explicabo molestias ex magnam maxime!</p>
-    </li>
-  </li>
-  <li class="quest-asked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui iure fugit pariatur corporis? Obcaecati ipsa modi, eligendi perferendis unde quam, dolor ut optio impedit reiciendis accusantium voluptate minus natus aspernatur!
-    <p class="btn-open-close" onclick="btnOpen()">OC</p>
-    <li class="quest-anser" style="display:none">
-        <p>Consequuntur, alias totam. Nesciunt quam, accusantium obcaecati dicta consequatur quas porro voluptates nostrum corrupti officia, doloribus veritatis explicabo molestias ex magnam maxime!</p>
-    </li>
-  </li>
-  <li class="quest-asked">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui iure fugit pariatur corporis? Obcaecati ipsa modi, eligendi perferendis unde quam, dolor ut optio impedit reiciendis accusantium voluptate minus natus aspernatur!
-    <p class="btn-open-close" onclick="btnOpen()">OC</p>
-    <li class="quest-anser" style="display:none">
-        {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'text' %}
-              <p>
-                {{ block.settings.title }}</p>
-            {% endcase %}
-          {% endfor %}
-    </li>
-  </li>
-</ul>
+  <button class="accordion">Question 1</button>
+  <div class="accordion-content">
+    <p>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when "text" %}
+          {{ block.settings.title }}
+        {% endcase %}
+      {% endfor %}
+    </p><br>
+  </div>
+</div>
 <button class="btn-contact-qa">Contact</button>
+
 
 {% schema %}
   {
