@@ -13,7 +13,6 @@
     <div class="banner-img">
       <h1>{{ block.settings.img }}</h1>
     </div>
-    {% # image in "Add functions..." block %}
     {% # check condition for default display is desktop and else for mobile if different null %}
     {% if block.settings.image_mobile != null %}
       <div class="img-mobile">
@@ -24,7 +23,6 @@
         <img class="img-hero-banner" src="{{ block.settings.image_choose |image_url }}">
       </div>
     {% endif %}
-
   {% endcase %}
 {% endfor %}
 {% schema %}
