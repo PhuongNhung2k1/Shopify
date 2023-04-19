@@ -1,0 +1,84 @@
+<h2>Mutiple banner
+</h2>
+{{ 'mutiple-banner.css' | asset_url | stylesheet_tag }}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when "text" %}
+    <div class="mutiple-banner-content">
+      <div class="banner-container">
+        <h1>{{ block.settings.title1 }}</h1>
+        <p>{{ block.settings.subtitle1 }}</p>
+      </div>
+    </div>
+    <div class="mutiple-banner-img-container">
+      <div class="banner-img1">
+        <img src="{{ block.settings.image_choose1 |image_url: width: 400 }}">
+      </div>
+      {% # image in "Add functions..." block %}
+      {% # image in new block %}
+      {% when "imagepicker" %}
+      <h1>{{ block.settings.title2 }}</h1>
+      <p>{{ block.settings.subtitle2 }}</p>
+      <div class="banner-img2">
+        <img src="{{ block.settings.image_choose2 |image_url: width: 400 }}">
+      </div>
+    </div>
+  {% endcase %}
+{% endfor %}
+{% schema %}
+  {
+    "name": "Mutiple Banner",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Add mutiple banner ...",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Title 1"
+          }, {
+            "type": "textarea",
+            "id": "subtitle1",
+            "label": "Note text 1"
+          }, {
+            "type": "image_picker",
+            "id": "image_choose1",
+            "label": "image picker 1"
+          }
+        ]
+      }, {
+        "type": "imagepicker",
+        "name": "Add mutiple banner",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title2",
+            "label": "Title 2"
+          }, {
+            "type": "textarea",
+            "id": "subtitle2",
+            "label": "Note text 2"
+          }, {
+            "type": "image_picker",
+            "id": "image_choose2",
+            "label": "image picker 2"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Test Mutiple Banner",
+        "blocks": [
+          {
+            "type": "text"
+          }, {
+            "type": "imagepicker"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

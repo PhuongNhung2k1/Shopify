@@ -1,0 +1,67 @@
+<h2>Test 2 Mutiple banner
+</h2>
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when "text" %}
+    <h1>{{ block.settings.title }}</h1>
+    <h1>{{ block.settings.img }}</h1>
+    {% # image in "Add functions..." block %}
+    <img src="{{ block.settings.image_choose |image_url: width: 300 }}">
+
+    {% # image in new block %}
+    {% when 'imagepicker' %}
+    <div class="image">
+      <img src="{{ block.settings.image_choose_block | image_url: width: 300 }}">
+    </div>
+  {% endcase %}
+{% endfor %}
+{% schema %}
+  {
+    "name": "Image Picker",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Add functions..",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "link_list",
+            "id": "linkUrl",
+            "label": "List link"
+          }, {
+            "type": "image_picker",
+            "id": "image_choose",
+            "label": "image picker"
+          }
+        ]
+      }, {
+        "type": "imagepicker",
+        "name": "Choose an image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_choose_block",
+            "label": "image picker"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Tesst image picker",
+        "blocks": [
+          {
+            "type": "text"
+          }, {
+            "type": "imagepicker"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+{% # must create block display block when choose add section in admin %}

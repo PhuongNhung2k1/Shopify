@@ -1,0 +1,17 @@
+<div class="carousel-container">
+  <div class="product-container">
+    {% for product in collections.featured-products.products %}
+      <div class="product-title">
+        {{ product.title }}
+      </div>
+      <div class="product-image">
+        <img src="{{ product.images[0] | img_url: 'grande' }}">
+      </div>
+      <div class="product-price">
+        {{ product.price }}
+      </div>
+    {% endfor %}
+  </div>
+  <div class="product-carousel-next">Next</div>
+  <div class="product-carousel-prev">Prev</div>
+</div>

@@ -1,0 +1,59 @@
+.section-tab-head {
+    background: #efefef;
+    color: #333;
+    display: block;
+    padding: 10px 10px;
+    cursor: pointer;
+    margin: 2px;
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 768px),
+    (min-width: 1051px) {
+    .section-tab-head {
+      background: none;
+      display: inline-block;
+      margin: inherit;
+      margin-top: 0;
+    }
+  }
+  
+  .section-tab-head.current {
+    background: #dbdbdb;
+    color: #333;
+  }
+  .shopify-tab-content {
+    display: none;
+    background: none;
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .shopify-tab-content > p {
+    font-size: 10pt;
+    font-weight: 400;
+  }
+  
+  .shopify-tab-content.current {
+    display: block;
+    font-size: 10pt;
+    background: white;
+    margin-top: 0px;
+  }
+  
+  .shopify-tab-content > ul {
+    list-style: disc;
+  }
+  
+  .shopify-tab-content > ul ul {
+    list-style: circle;
+  }
+  
+  li,
+  .shopify-tab-content {
+    margin: 10px 0;
+  }
+  
+  .shopify-tabs .shopify-tab-content {
+    float: left;
+  }
+  

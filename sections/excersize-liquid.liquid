@@ -1,0 +1,107 @@
+<h2>This is exercise liquid in shopify</h2>
+
+{% assign hello_text = "Hello word" %}
+
+{%# tao array fruits %}
+{% assign fruits = 'oranges, peaches,apples, tomatoes' %}
+{% assign number = 4.3 %}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when "text" %}
+    <div>
+      <p>Hiển thị giá trị của biến hello_text : {{ hello_text }}</p>
+      <p>Hiển thị giá trị của biến hello_text ra màn hình nhưng viết hoa toàn bộ: {{ hello_text | upcase }}</p>
+      <p>Thay the world bằng AHT và hiển thị ra màn hình: {{ hello_text | replace: hello_text, 'AHT' }}
+      </p>
+      <p>Tạo ra 1 biến fruits chứa 1 mảng các giá trị là [apples, oranges, peaches, tomatoes]:</p>
+      <p>Từ biến đó hiển thị ra màn hình theo dạng apples-oranges-peaches-tomatoes:</p>
+        {% for item in fruits %}
+          <p>{{ item |replace: ',', '-'  }}</p>
+        {% endfor %}
+      </p>
+      <p>Hiển thị ra màn hình phần tử thứ 2 của mảng đó: 
+       
+      <br>
+      </p>
+     <p> Hiển thị ra màn hình mảng đó nhưng đã được sắp xếp thứ tự Alphabet: 
+          {{ fruits| sort| join: '-'  }}<br>
+         Hiển thị ra màn hình những phần tử có độ dài 7 kí tự:  
+         
+          <br>
+          Hiển thị ra màn hình những phần tử có chữ o :
+         
+          <br>
+          </p>
+
+          <p>Tạo ra 1 biến number có giá trị là 4.3 : {{number}} </p>
+            Hiển thị ra màn hình biến đó nhưng làm tròn lên:{{number | ceil}}<br>
+            Hiển thị ra màn hình biến đó nhưng làm tròn xuống:{{ number|round }}<br>
+            Hiển thị ra màn hình biến đó nhân với 10 : {{number| times: 10 }} <br>
+            Hiển thị ra màn hình biến đó chia cho 2 {{ number | divided_by: 2  }} </p>
+
+          <p>Trong page product, hiển thị ra màn hình tất cả tag của sản phẩm:
+            
+            Trong page product, hiển thị ra màn hình description của sản phẩm, nếu không có thì hiển thị text Coming soon
+            Trong page product, nếu sản phẩm có tag là new hoặc New thì hiển thị ra màn hình text New Product
+            Trong page product, nếu sản phẩm có giá sale thì hiển thị ra màn hình % sale. Ví dụ: giá gốc 10, giá sale 5 thì hiển thị ra Sale 50%
+            </p>
+    </div>
+    
+      {%# tess%}
+      <h2>Test product title .....</h2>
+      {% for tag in customer.tags %}
+        {% if tag == 'organic' %}
+      
+        {% assign collection = collections[my-collection-handle] %}
+        
+        {% paginate collection.products by 99 %}
+        {% assign products = collection.products %}
+      
+        {% if collection.products.size > 0 %}
+      
+        {% for product in products %}
+          {% for tag in product.tags %}
+            {% if product.tag == 'limited_edition' %}
+              <p>{{ product.title }}</p>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      
+        {% endif %}
+      
+        {% endpaginate %}
+          
+        {% endif %}
+      {% endfor %}
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Section Hero Banner",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Add functions..",
+        "settings": [
+          {
+            "type": "text",
+            "id": "exercise",
+            "label": "Test exersize liquid"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Test exersize liquid",
+        "blocks": [
+          {
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

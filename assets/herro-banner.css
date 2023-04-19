@@ -1,0 +1,49 @@
+.img-hero-banner {
+    max-width: 100%;
+}
+
+/* css for hero banner.liquid  */
+.banner-content {
+    justify-content: space-between;
+    text-align: center;
+    z-index: 30;
+    position: absolute;
+    /* vertical-align: middle; */
+    margin-top: 140px;
+}
+
+.banner-container {
+    margin-left: 700px;
+    margin-top: 100px;
+}
+.banner-content a {
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.banner-img {
+    position: relative;
+    z-index: 20;
+}
+
+/* css for mobile in hero banner */
+@media screen and (max-width: 768px) {
+    
+    .img-mobile {
+     display: block !important;
+    }
+    .img-desktop {
+        display: none;
+    }
+
+    .banner-content,
+    .banner-content a  {
+         color: #fff;
+    }
+    .banner-container {
+        margin-left: 200px;
+        margin-top: -80px;
+    }
+}

@@ -1,0 +1,41 @@
+.mutiple-banner-container{
+    display: inline-block;
+    width: calc(100%/3 - 10px);
+}
+.mutiple-banner-sub .mutiple-banner-image{
+    width: 25%;
+}
+
+.mutiple-banner-sub img {
+    display: inline-block;
+}
+
+.mutiple-banner-sub .mutiple-banner-content{
+    z-index: 20;
+    position: absolute;
+    display: block;
+    text-align: center;
+}
+
+.mutiple-banner-content button{
+     background-color: #fff;
+    color: #000;
+    width: 200px;
+    padding: 2px 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 60px;
+    margin-top: 200px;
+    line-height: 60px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.mutiple-banner-content button:hover {
+    opacity: 0.8;
+}
+
+.mutiple-banner-sub .mutiple-banner-image{
+    z-index: 10;
+    /* position: relative; */
+}
+

@@ -1,0 +1,68 @@
+<h1>Demo calcular</h1>
+
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when "text" %}
+    <h1>{{ block.settings.calculating }}</h1>
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Custom Calcular",
+    "tag": "section",
+    "class": "section",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "add field calcular",
+        "settings": [
+          {
+            "type": "text",
+            "id": "calculating",
+            "label": "argument 1"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Calcular but"
+      }
+    ]
+  }
+{% endschema %}
+
+<table class="cart" style="border: 1px solid #ccc;">
+  <thead class="heading">
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+
+  <tbody class="line-items">
+    {% for item in cart.items %}
+      {% if item.cart_count >= 1 %}
+        <p>hello abschsajakk
+        </p>
+      {% endif %}
+      <tr>
+        <td style="width: 200px;">{{ item.product.title }}</td>
+        <td style="width: 200px;">{{ item.quantity }}</td>
+        <td style="width: 200px;">{{ item.line_price | money }}</td>
+      </tr>
+
+    {% endfor %}
+  </tbody>
+
+  <p></p>
+  <tfoot class="summary">
+    <tr>
+      <td colspan="2">Total aaaa</td>
+      <td style="width: 200px;">{{ cart.total_price | money }}</td>
+    </tr>
+
+  </tfoot>
+</table>

@@ -1,0 +1,85 @@
+<h2>Hero banner</h2>
+{{ 'herro-banner.css' | asset_url | stylesheet_tag }}
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when "text" %}
+    <div class="banner-content">
+      <div class="banner-container">
+        <h1>{{ block.settings.title }}</h1>
+        <p>{{ block.settings.subtitile }}</p>
+        <a href="">Shop now</a>
+      </div>
+    </div>
+    <div class="banner-img">
+      <h1>{{ block.settings.img }}</h1>
+    </div>
+    {% # image in "Add functions..." block %}
+    <div class="img-desktop">
+      <img class="img-hero-banner" src="{{ block.settings.image_choose |image_url }}">
+    </div>
+
+    <div class="img-mobile" style="display: none;">
+      {%# This show component to display when chose in navigate left %}
+      <img class="img-hero-banner" src="{{ block.settings.image_mobile |image_url }}">
+
+    </div>
+    {% # image in new block %}
+    {% when 'imagepicker' %}
+    <div class="image">
+      <img src="{{ block.settings.image_choose_block | image_ur}}">
+    </div>
+  {% endcase %}
+{% endfor %}
+{% schema %}
+  {
+    "name": "Section Hero Banner",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Add functions..",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          }, {
+            "type": "textarea",
+            "id": "subtitile",
+            "label": "Note text"
+          }, {
+            "type": "image_picker",
+            "id": "image_choose",
+            "label": "image picker"
+          }, {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "image for mobile"
+          }
+        ]
+      }, {
+        "type": "imagepicker",
+        "name": "Choose an image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_choose_block",
+            "label": "image picker"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Test section Hero Banner",
+        "blocks": [
+          {
+            "type": "text"
+          }, {
+            "type": "imagepicker"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

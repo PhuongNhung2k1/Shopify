@@ -1,0 +1,59 @@
+{{ 'test-js.css' | asset_url | stylesheet_tag }}
+{{ 'test-js.js' | asset_url | script_tag }}
+
+<ul class="shopify-tabs">
+  <li class="section-tab-head current" data-tab="section-tab-1">
+    Heading 1</li>
+  <div id="section-tab-1" class="shopify-tab-content current">
+    <p>some content goes here</p>
+  </div>
+
+  <li class="section-tab-head" data-tab="section-tab-2">
+    Heading 2</li>
+  <div id="section-tab-2" class="shopify-tab-content">
+    <p>more content in this tab</p>
+  </div>
+
+  <li class="section-tab-head" data-tab="section-tab-3">
+    Heading 3</li>
+  <div id="section-tab-3" class="shopify-tab-content">
+    <p>some content is in list form:</p>
+    <ul>
+      <li>{{ block.settings.title }}</li>
+      <li>product feature</li>
+      <li>product feature</li>
+    </ul>
+  </div>
+</ul>
+
+{% schema %}
+  {
+    "name": "Test asked question",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Add functions..",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Note text"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Test slide show js",
+        "blocks": [
+          {
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
