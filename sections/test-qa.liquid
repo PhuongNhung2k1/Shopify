@@ -6,14 +6,14 @@
 
   <button class="accordion">Question 1</button>
   <div class="accordion-content">
-    <p>
+    <li class="show-anser">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when "text" %}
           {{ block.settings.title }}
         {% endcase %}
       {% endfor %}
-    </p><br>
+    </li><br>
   </div>
 </div>
 <button class="btn-contact-qa">Contact</button>

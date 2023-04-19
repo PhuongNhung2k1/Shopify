@@ -1,0 +1,61 @@
+<h2>Test show slider</h2>
+
+{{ 'mutiple-banner.css' | asset_url | stylesheet_tag }}
+
+{% for block in section.blocks %}
+  {% case 'type_slider' %}
+    {% when 'text' %}
+    <div class="mutiple-banner-container">
+      <div class="mutiple-banner-sub">
+        <div class="mutiple-banner-content">
+          {%# <h1>{{ block.settings.subtitle1 }}</h1> %}
+          <button>
+            {{ block.settings.title1 }}
+          </button>
+        </div>
+        <div class="mutiple-banner-image">
+          <img src="{{ block.settings.image_choose1 |image_url: width: 450 }}">
+        </div>
+      </div>
+    </div>
+{% else %}
+  {% endcase %}
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Mutiple Slider",
+    "blocks": [
+      {
+        "type": "type_slider",
+        "name": "Add mutiple banner ...",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title1",
+            "label": "Title 1"
+          }, {
+            "type": "textarea",
+            "id": "subtitle1",
+            "label": "Note text 1"
+          }, {
+            "type": "image_picker",
+            "id": "image_choose1",
+            "label": "image picker 1"
+          }
+        ]
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Test Slider show",
+        "blocks": [
+          {
+            "type": "type_slider"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

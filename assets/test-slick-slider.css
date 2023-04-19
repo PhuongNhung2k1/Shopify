@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body{ width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; background-color: #f5f5f5;}
+
+ul, ol{ list-style: none; }
+
+a{ text-decoration: none !important; }
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+
+.special-container{
+	width: 950px;
+    padding: 0;
+}
+
+.ineffective-row{
+    padding: 0;
+    margin: 0;
+}
+
+.col-md-29{
+	width: 29.5%;
+	float: left;
+	padding: 0;
+}
+
+.col-md-70{
+	width: 70%;
+	float: left;
+	padding: 0;
+}
+
+.slick-dots li.slick-active button:before{
+	color: #fff !important;
+	opacity: 1 !important;
+	content: "\f10c";
+	font-size: 16px;
+	font-family: FontAwesome;	
+}
+
+.slick-dots li button:before{
+	content: "\f111";
+	font-family: FontAwesome;
+	font-size: 14px;
+	color: #fff;
+	opacity: 1 !important;
+}
+
+.active-title a{
+	color: #e10000;
+}
+
+.active-title:before{
+    -webkit-clip-path: polygon(0 50%, 100% 100%, 100% 0);
+    clip-path: polygon(0 50%, 100% 100%, 100% 0);
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    right: -25px;
+    opacity: 1;
+    top: 5px;
+    z-index: 9;	
+}
+
+.komp-slider{
+	margin-bottom: 0px !important;
+	position: relative;
+}
+
+.komp-item{
+	position: relative;
+}
+
+.komp-slider .slick-dots{
+	z-index: 9;
+	width: initial;
+	left: 85px;
+	bottom: 15px;
+}
+
+
+.slide-here{
+	transition: all .3s ease;
+}
+.max-slide{
+	color: #e10000;
+	font-size: 18px;
+	font-weight: 600
+}
+
+.komp-slider .slick-dots li{
+	margin: 0;
+	width: 17px;
+}
+
+.komp-slider .slick-dots li button:before{
+	font-size: 9px;
+}
+
+.komp-slider .slick-dots li.slick-active button:before{
+	font-size: 11px;
+}
+
+.referanslarimiz{
+	margin-top: 45px;
+	margin-bottom: 30px;
+}
+
+.ref-names{
+	padding: 30px 25px;
+	background-color: #343434;
+}
+
+.ref-names h4{
+	color: #e10000;
+	margin-bottom: 10px;
+}
+
+.ref-name-list li{
+	position: relative;
+	transition: .3s ease;
+}
+
+.ref-name-list .active-title:before{
+	top: 0;
+}
+
+.ref-name-list li:not(:last-child){
+	margin-bottom: 5px;
+
+}
+
+.ref-name-list li a{
+	font-size: 14px;
+	color: #fff;
+}
+
+.content-ref{
+	padding: 45px 25px;
+	background-color: #fff;
+}
+
+.content-ref h4{
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.content-ref p{
+	line-height: 24px;
+	font-size: 16px;	
+}
+
+.referans{
+	display: none;
+}
+
+.active-slider{
+    display: block !important;
+}

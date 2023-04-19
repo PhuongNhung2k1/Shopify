@@ -46,3 +46,7 @@
     transition: max-height 0.2s ease-in-out;
   }
   
+  .show-anser {
+    border: 1px solid #ccc;
+    display: inline-block;
+  }
