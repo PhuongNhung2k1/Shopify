@@ -192,6 +192,42 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
+    },
+    "bf7c431c-51c4-48c9-ad99-2b690ef5af1c": {
+      "type": "test-slick-slider",
+      "blocks": {
+        "template--18613229912345__bf7c431c-51c4-48c9-ad99-2b690ef5af1c-1681898356bbfb3a9a-0": {
+          "type": "type_slider",
+          "settings": {
+            "title1": "",
+            "subtitle1": "",
+            "image_choose": "shopify:\/\/shop_images\/working-at-night.jpg"
+          }
+        },
+        "d31835d1-c13c-40fa-a97f-bbe1582956d7": {
+          "type": "type_slider",
+          "settings": {
+            "title1": "",
+            "subtitle1": "",
+            "image_choose": "shopify:\/\/shop_images\/silver-lamp-on-a-white-table-next-to-books.jpg"
+          }
+        },
+        "bf527926-b2c3-4105-b303-0c4ee71226f5": {
+          "type": "type_slider",
+          "settings": {
+            "title1": "",
+            "subtitle1": "",
+            "image_choose": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--18613229912345__bf7c431c-51c4-48c9-ad99-2b690ef5af1c-1681898356bbfb3a9a-0",
+        "d31835d1-c13c-40fa-a97f-bbe1582956d7",
+        "bf527926-b2c3-4105-b303-0c4ee71226f5"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -200,6 +236,7 @@
     "8940e5a0-75f4-4d40-b6b2-021fe311c881",
     "37a5b451-1942-4acd-b67d-76f9b364d57c",
     "7fb26128-c803-4d48-b431-d909de0248da",
-    "54052548-6bd9-4bd6-b1c0-abcec85d5938"
+    "54052548-6bd9-4bd6-b1c0-abcec85d5938",
+    "bf7c431c-51c4-48c9-ad99-2b690ef5af1c"
   ]
 }

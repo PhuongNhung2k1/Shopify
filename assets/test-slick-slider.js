@@ -1,10 +1,11 @@
-$('.komp2 .referans').slick({
-    slide : '.referans .komp-item',
-    arrows: false,
+$('.active-slider').slick({
+    arrows: true,
     infinite : false,
     dots: true,
-    autoplay: false,
+    autoplay: true,
+    autoplaySpeed:5000
 });
+
 // start here
 $('.ref-name-list li').click(function(){
     $('.ref-name-list li').removeClass('active-title');// Remove active-title link

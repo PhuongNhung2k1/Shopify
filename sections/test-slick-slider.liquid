@@ -21,47 +21,14 @@
         <div class="referans active-slider">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when 'type_banner' %}
+              {% when 'type_slider' %}
               <div class="komp-item">
-                <img src="{{ block.settings.image_choose1 }}" width="100%" />
+                <img src="{{ block.settings.image_choose |image_url: width: 450 }}" />
                 <div class="carausel-mask"></div>
               </div>
             {% endcase %}
           {% endfor %}
         </div>
-        <div class="referans">
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/gW3bZQ.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/XXQlLO.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/XXQlLO.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/XXQlLO.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-        </div>
-        <div class="referans">
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/XXQlLO.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/gW3bZQ.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-          <div class="komp-item">
-            <img src="https://i.hizliresim.com/XXQlLO.png" width="100%" />
-            <div class="carausel-mask"></div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
@@ -85,7 +52,7 @@
             "label": "Note text 1"
           }, {
             "type": "image_picker",
-            "id": "image_choose1",
+            "id": "image_choose",
             "label": "image picker 1"
           }
         ]
