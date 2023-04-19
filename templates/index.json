@@ -70,6 +70,7 @@
     },
     "8940e5a0-75f4-4d40-b6b2-021fe311c881": {
       "type": "hero-banner",
+      "disabled": true,
       "blocks": {
         "e7da1bed-06b1-4b2c-acea-f85acb4c3132": {
           "type": "text",
@@ -83,48 +84,6 @@
         "e7da1bed-06b1-4b2c-acea-f85acb4c3132"
       ],
       "settings": {
-      }
-    },
-    "2c03278a-678e-4221-9c2b-0ed4f6756b31": {
-      "type": "rich-text",
-      "blocks": {
-        "template--18613229912345__2c03278a-678e-4221-9c2b-0ed4f6756b31-16813659714e331a0d-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "template--18613229912345__2c03278a-678e-4221-9c2b-0ed4f6756b31-16813659714e331a0d-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        },
-        "template--18613229912345__2c03278a-678e-4221-9c2b-0ed4f6756b31-16813659714e331a0d-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--18613229912345__2c03278a-678e-4221-9c2b-0ed4f6756b31-16813659714e331a0d-0",
-        "template--18613229912345__2c03278a-678e-4221-9c2b-0ed4f6756b31-16813659714e331a0d-1",
-        "template--18613229912345__2c03278a-678e-4221-9c2b-0ed4f6756b31-16813659714e331a0d-2"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "37a5b451-1942-4acd-b67d-76f9b364d57c": {
@@ -150,7 +109,7 @@
         "template--18613229912345__37a5b451-1942-4acd-b67d-76f9b364d57c-16814537711122aa7e-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_from_2023-03-02_10-52-01.png",
+        "image": "shopify:\/\/shop_images\/golden-autumn-leaves.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
@@ -239,7 +198,6 @@
     "image_banner",
     "featured_collection",
     "8940e5a0-75f4-4d40-b6b2-021fe311c881",
-    "2c03278a-678e-4221-9c2b-0ed4f6756b31",
     "37a5b451-1942-4acd-b67d-76f9b364d57c",
     "7fb26128-c803-4d48-b431-d909de0248da",
     "54052548-6bd9-4bd6-b1c0-abcec85d5938"

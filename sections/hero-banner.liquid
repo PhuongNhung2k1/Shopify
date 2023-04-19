@@ -21,13 +21,16 @@
     <div class="img-mobile" style="display: none;">
       {%# This show component to display when chose in navigate left %}
       <img class="img-hero-banner" src="{{ block.settings.image_mobile |image_url }}">
+    </div>
 
-    </div>
+    {% if block.settings.image_mobile == null %}
+      <img class="img-hero-banner" src="{{ block.settings.image_choose |image_url }}">
+    {% else %}
+      <img class="img-hero-banner" src="{{ block.settings.image_mobile |image_url }}">
+    {% endif %}
+
     {% # image in new block %}
-    {% when 'imagepicker' %}
-    <div class="image">
-      <img src="{{ block.settings.image_choose_block | image_ur}}">
-    </div>
+
   {% endcase %}
 {% endfor %}
 {% schema %}
@@ -56,16 +59,6 @@
             "label": "image for mobile"
           }
         ]
-      }, {
-        "type": "imagepicker",
-        "name": "Choose an image",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "image_choose_block",
-            "label": "image picker"
-          }
-        ]
       }
     ],
     "presets": [
@@ -74,8 +67,6 @@
         "blocks": [
           {
             "type": "text"
-          }, {
-            "type": "imagepicker"
           }
         ]
       }
