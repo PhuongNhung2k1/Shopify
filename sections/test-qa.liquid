@@ -4,20 +4,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
 
-  <button class="accordion">Question 1</button>
-  <div class="accordion-content">
-    <li class="show-anser">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when "text" %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "text" %}
+      <button class="accordion">{{ block.settings.question }}
+      </button>
+      <div class="accordion-content">
+        <li class="show-anser">
           {{ block.settings.title }}
-        {% endcase %}
-      {% endfor %}
-    </li><br>
-  </div>
+        </li><br>
+      </div>
+    {% endcase %}
+  {% endfor %}
 </div>
 <button class="btn-contact-qa">Contact</button>
-
 
 {% schema %}
   {
@@ -29,8 +29,12 @@
         "settings": [
           {
             "type": "textarea",
-            "id": "title",
-            "label": "Note text"
+            "id": "question",
+            "label": "Question"
+          }, {
+            "type": "textarea",
+            "id": "questtion",
+            "label": "Ansewer"
           }
         ]
       }

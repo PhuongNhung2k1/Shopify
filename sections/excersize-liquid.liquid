@@ -26,10 +26,21 @@
      <p> Hiển thị ra màn hình mảng đó nhưng đã được sắp xếp thứ tự Alphabet: 
           {{ fruits| sort| join: '-'  }}<br>
          Hiển thị ra màn hình những phần tử có độ dài 7 kí tự:  
-         
+         {% assign fruits = "apples, oranges, peaches, tomatoes" | split: ',' %}
+         {% for item in fruits %}
+          {% assign lengthFruit = item | size %}
+          {% if lengthFruit >= 7 %}
+            {{ item }}
+          {% endif %}
+        {% endfor %}
           <br>
           Hiển thị ra màn hình những phần tử có chữ o :
-         
+          {% assign fruits = "apples, oranges, peaches, tomatoes" | split: ',' %}
+          {% for item in fruits %}
+            {% if item contains "o" %}
+              {{ item }}
+            {% endif %}
+          {% endfor %}
           <br>
           </p>
 
@@ -51,14 +62,10 @@
       <h2>Test product title .....</h2>
       {% for tag in customer.tags %}
         {% if tag == 'organic' %}
-      
-        {% assign collection = collections[my-collection-handle] %}
-        
+        {% assign collection = collections[my-collection-handle] %} 
         {% paginate collection.products by 99 %}
-        {% assign products = collection.products %}
-      
+        {% assign products = collection.products %}   
         {% if collection.products.size > 0 %}
-      
         {% for product in products %}
           {% for tag in product.tags %}
             {% if product.tag == 'limited_edition' %}

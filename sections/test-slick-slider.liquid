@@ -1,30 +1,18 @@
 {{ 'test-slick-slider.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'test-slick-slider.js' | asset_url }}" defer="defer"></script>
 <div class="container special-container">
-  <div class="row ineffective-row">
-    <div class="col-md-29  ref-names">
-      <h4>REFERANSLARIMIZ</h4>
-      <ul class="ref-name-list">
-        <li>
-          <a href="javascript:void(0)">
-            Referans Ad 3
-          </a>
-        </li>
-      </ul>
-      <input
-        type="text"
-        class="active-data"
-        hidden="" />
-    </div>
-    <div class="col-md-70 ">
-      <div class="komp2 komp-slider ">
+      <div class="sliders show-slider ">
         <div class="referans active-slider">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'type_slider' %}
-              <div class="komp-item">
-                <img src="{{ block.settings.image_choose |image_url: width: 450 }}" />
-                <div class="carausel-mask"></div>
+                <div class="show-content">
+                  <h1>{{ block.settings.title1 }} </h1>
+                  <p>{{ block.settings.subtitle1 }} </p>
+                  <a href="#">Shop now</a>
+                </div>
+              <div class="show-item">
+                <img src="{{ block.settings.image_choose |image_url }}" />
               </div>
             {% endcase %}
           {% endfor %}
@@ -54,6 +42,10 @@
             "type": "image_picker",
             "id": "image_choose",
             "label": "image picker 1"
+          }, {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "image for mobile"
           }
         ]
       }

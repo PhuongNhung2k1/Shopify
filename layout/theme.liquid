@@ -46,13 +46,14 @@
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    {%# Add script to use slick%}
     <script src="{{ 'slick.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'slick.min.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'test-slick-slider.js' | asset_url }}" defer="defer"></script>
 
     {{ content_for_header }}
-
     {%- liquid
+
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
@@ -404,6 +405,7 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
+    {%# add css slick %}
     {{ 'slick.css' | asset_url | stylesheet_tag }}
     {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
 

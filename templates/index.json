@@ -193,14 +193,33 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "5d2f4234-59fd-4f03-8fd9-cc85924d642b": {
+      "type": "hero-banner",
+      "blocks": {
+        "template--18613229912345__5d2f4234-59fd-4f03-8fd9-cc85924d642b-168192439453da816a-0": {
+          "type": "text",
+          "settings": {
+            "title": "Enjoy Winter Trend",
+            "subtitile": "Discover snow latest collection",
+            "image_choose": "shopify:\/\/shop_images\/house-plant-on-wooden-slat-wall.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/silver-lamp-on-a-white-table-next-to-books.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--18613229912345__5d2f4234-59fd-4f03-8fd9-cc85924d642b-168192439453da816a-0"
+      ],
+      "settings": {
+      }
+    },
     "bf7c431c-51c4-48c9-ad99-2b690ef5af1c": {
       "type": "test-slick-slider",
       "blocks": {
         "template--18613229912345__bf7c431c-51c4-48c9-ad99-2b690ef5af1c-1681898356bbfb3a9a-0": {
           "type": "type_slider",
           "settings": {
-            "title1": "",
-            "subtitle1": "",
+            "title1": "nffh",
+            "subtitle1": "djjjdj",
             "image_choose": "shopify:\/\/shop_images\/working-at-night.jpg"
           }
         },
@@ -228,6 +247,51 @@
       ],
       "settings": {
       }
+    },
+    "9409973f-8917-483d-8c95-47beb96a0752": {
+      "type": "mutiple-banner",
+      "blocks": {
+        "template--18613229912345__9409973f-8917-483d-8c95-47beb96a0752-1681960346cd271cf9-0": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 1",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/house-plant-on-wooden-slat-wall.jpg"
+          }
+        },
+        "4a19fe15-6aaa-433e-898d-7c36e91ba386": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 2",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/working-at-night.jpg"
+          }
+        },
+        "38d0fb9c-56fb-4f4d-a444-029d97005836": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 3",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg"
+          }
+        },
+        "b51a2f91-82fa-45df-85a9-e5d3e4989cab": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 4",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/handful-of-acorns.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--18613229912345__9409973f-8917-483d-8c95-47beb96a0752-1681960346cd271cf9-0",
+        "4a19fe15-6aaa-433e-898d-7c36e91ba386",
+        "38d0fb9c-56fb-4f4d-a444-029d97005836",
+        "b51a2f91-82fa-45df-85a9-e5d3e4989cab"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -237,6 +301,8 @@
     "37a5b451-1942-4acd-b67d-76f9b364d57c",
     "7fb26128-c803-4d48-b431-d909de0248da",
     "54052548-6bd9-4bd6-b1c0-abcec85d5938",
-    "bf7c431c-51c4-48c9-ad99-2b690ef5af1c"
+    "5d2f4234-59fd-4f03-8fd9-cc85924d642b",
+    "bf7c431c-51c4-48c9-ad99-2b690ef5af1c",
+    "9409973f-8917-483d-8c95-47beb96a0752"
   ]
 }
