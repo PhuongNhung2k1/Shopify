@@ -1,9 +1,8 @@
 /* css for asked question */
 
 .container {
-    width: 80%;
-    max-width: 600px;
-    margin: 50px auto;
+    width: 100%;
+    margin: 10px auto;
     color: #000;
   }
   
@@ -46,8 +45,6 @@
     overflow: hidden;
     transition: max-height 0.2s ease-in-out;
   }
-  
-  .show-anser {
-    border: 1px solid #ccc;
-    display: inline-block;
+  .btn-contact-qa {
+    padding: 15px;
   }

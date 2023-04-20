@@ -1,0 +1,13 @@
+.lists-feature-product {
+    flex-wrap: wrap;
+    display: inline-block;
+}
+.item-feature-product {
+    /* width: calc(100%/4); */
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+a {
+    text-decoration: none;
+}
