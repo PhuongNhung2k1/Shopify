@@ -5,6 +5,8 @@
 	width: 100%;
     padding: 0;
 }
+
+/*create dot to run slide*/
 .slick-dots li.slick-active button:before{
 	color: #fff !important;
 	opacity: 1 !important;
@@ -59,7 +61,6 @@
 	bottom: 15px;
 }
 
-
 .slide-here{
 	transition: all .3s ease;
 }
@@ -75,7 +76,7 @@
 }
 
 .show-slider .slick-dots li button:before{
-	font-size: 9px;
+	font-size: 15px;
 }
 
 .show-slider .slick-dots li.slick-active button:before{

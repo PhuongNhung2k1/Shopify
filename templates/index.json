@@ -193,6 +193,25 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "5d2f4234-59fd-4f03-8fd9-cc85924d642b": {
+      "type": "hero-banner",
+      "blocks": {
+        "template--18613229912345__5d2f4234-59fd-4f03-8fd9-cc85924d642b-168192439453da816a-0": {
+          "type": "text",
+          "settings": {
+            "title": "Test",
+            "subtitile": "Test for mobile and desktop",
+            "image_choose": "shopify:\/\/shop_images\/house-plant-on-wooden-slat-wall.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/silver-lamp-on-a-white-table-next-to-books.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--18613229912345__5d2f4234-59fd-4f03-8fd9-cc85924d642b-168192439453da816a-0"
+      ],
+      "settings": {
+      }
+    },
     "bf7c431c-51c4-48c9-ad99-2b690ef5af1c": {
       "type": "test-slick-slider",
       "blocks": {
@@ -237,6 +256,7 @@
     "37a5b451-1942-4acd-b67d-76f9b364d57c",
     "7fb26128-c803-4d48-b431-d909de0248da",
     "54052548-6bd9-4bd6-b1c0-abcec85d5938",
+    "5d2f4234-59fd-4f03-8fd9-cc85924d642b",
     "bf7c431c-51c4-48c9-ad99-2b690ef5af1c"
   ]
 }
