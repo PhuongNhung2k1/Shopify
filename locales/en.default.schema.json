@@ -2373,6 +2373,34 @@
         }
       }
     },
+
+    "custom-feature-collection":{
+      "name": "Custom feature product collection",
+      "blocks": {
+        "custom-prod-collection":{
+          "name":"Custom featue product",
+          "settings": [
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Heading",
+              "default": "Featured collection"
+            }, {
+              "id": "collection",
+              "type": "collection",
+              "label": "Collection"
+            }, {
+              "type": "text",
+              "id": "number_display",
+              "label": " chose display product"
+            }
+          ]
+        },
+          "presets": {
+            "name": "Custom feature product collection",
+          }
+
+    },
     "main-register": {
       "name": "Registration"
     },

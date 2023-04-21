@@ -1,19 +1,22 @@
 .mutiple-banner-container{
-    display: inline-block;
-    width: calc(100%/4 - 10px);
+    display: flex;
+    flex-wrap: row nowrap;
 }
-.mutiple-banner-sub .mutiple-banner-image{
-    width: 25%;
+
+img {
+    height: 400px;
 }
-/* 
-.mutiple-banner-sub img {
-    display: inline-block;
-} */
+.col-2 {
+    width: calc(100%/2);
+    display: inline;
+}
+.col-4{
+    width: calc(100%/4);
+}
 
 .mutiple-banner-sub .mutiple-banner-content{
     z-index: 20;
     position: absolute;
-    display: block;
     text-align: center;
 }
 
@@ -39,3 +42,9 @@
     /* position: relative; */
 }
 
+/* css for mobile  */
+@media screen and (min-width: 750px) {
+    .mutiple-banner-container{
+        width: 100%;
+    }
+}

@@ -2,26 +2,43 @@
 </h2>
 {%# can modify width for banner 1/4 or 1/2%}
 {{ 'mutiple-banner.css' | asset_url | stylesheet_tag }}
-{% for block in section.blocks %}
-  {% case block.type %}
-    {% when 'type_banner' %}
 
-    <div class="mutiple-banner-container">
-      <div class="mutiple-banner-sub">
-        <div class="mutiple-banner-content">
-          {%# <h1>{{ block.settings.subtitle1 }}</h1> %}
-          <button>
-            {{ block.settings.title1 }}
-          </button>
-        </div>
-        <div class="mutiple-banner-image">
-          <img src="{{ block.settings.image_choose1 |image_url: width: 450 }}">
-        </div>
-      </div>
-    </div>
+<div class="mutiple-banner-container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'type_banner' %}
 
-  {% endcase %}
-{% endfor %}
+      {% if block.settings.halp_size == true %}
+        <div class="mutiple-banner-sub col-2">
+          <div class="mutiple-banner-content ">
+            {%# <h1>{{ block.settings.subtitle1 }}</h1> %}
+            <button>
+              {{ block.settings.title1 }}
+            </button>
+          </div>
+          <div class="mutiple-banner-image">
+            <img src="{{ block.settings.image_choose1 |image_url }}">
+          </div>
+        </div>
+      {% endif %}
+
+      {%# size 1/4%}
+      {% if block.settings.onefour_size == true %}
+        <div class="mutiple-banner-sub col-4">
+          <div class="mutiple-banner-content">
+            {%# <h1>{{ block.settings.subtitle1 }}</h1> %}
+            <button>
+              {{ block.settings.title1 }}
+            </button>
+          </div>
+          <div class="mutiple-banner-image">
+            <img src="{{ block.settings.image_choose1 |image_url }}">
+          </div>
+        </div>
+      {% endif %}
+    {% endcase %}
+  {% endfor %}
+</div>
 
 {% schema %}
   {
@@ -35,14 +52,27 @@
             "type": "text",
             "id": "title1",
             "label": "Title 1"
-          }, {
+          },
+          {
             "type": "textarea",
             "id": "subtitle1",
             "label": "Note text 1"
-          }, {
+          },
+          {
             "type": "image_picker",
             "id": "image_choose1",
             "label": "image picker 1"
+          },
+          {
+            "type": "checkbox",
+            "id": "halp_size",
+            "default": false,
+            "label": "Choose Size 1/2 for banner"
+          }, {
+            "type": "checkbox",
+            "id": "onefour_size",
+            "default": false,
+            "label": "Choose Size  1/4 for banner"
           }
         ]
       }

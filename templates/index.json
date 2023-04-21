@@ -256,7 +256,9 @@
           "settings": {
             "title1": "banner 1",
             "subtitle1": "",
-            "image_choose1": "shopify:\/\/shop_images\/house-plant-on-wooden-slat-wall.jpg"
+            "image_choose1": "shopify:\/\/shop_images\/house-plant-on-wooden-slat-wall.jpg",
+            "halp_size": false,
+            "onefour_size": false
           }
         },
         "4a19fe15-6aaa-433e-898d-7c36e91ba386": {
@@ -264,7 +266,9 @@
           "settings": {
             "title1": "banner 2",
             "subtitle1": "",
-            "image_choose1": "shopify:\/\/shop_images\/working-at-night.jpg"
+            "image_choose1": "shopify:\/\/shop_images\/working-at-night.jpg",
+            "halp_size": false,
+            "onefour_size": false
           }
         },
         "38d0fb9c-56fb-4f4d-a444-029d97005836": {
@@ -272,7 +276,9 @@
           "settings": {
             "title1": "banner 3",
             "subtitle1": "",
-            "image_choose1": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg"
+            "image_choose1": "shopify:\/\/shop_images\/person-fishing-on-the-beach-is-silhouetted-at-sunset.jpg",
+            "halp_size": false,
+            "onefour_size": false
           }
         },
         "b51a2f91-82fa-45df-85a9-e5d3e4989cab": {
@@ -280,7 +286,9 @@
           "settings": {
             "title1": "banner 4",
             "subtitle1": "",
-            "image_choose1": "shopify:\/\/shop_images\/handful-of-acorns.jpg"
+            "image_choose1": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "halp_size": false,
+            "onefour_size": false
           }
         }
       },
@@ -299,22 +307,22 @@
         "template--18613229912345__2b41831a-4ef3-4f7a-9488-2e14ecbfe4c4-1681964583ea36ee55-0": {
           "type": "text",
           "settings": {
-            "question": "fdfdff",
-            "anser": "bgggggggggg"
+            "question": "Question 1",
+            "anser": "Anserwer question 1"
           }
         },
         "433b67dd-61d2-4487-94b3-732cfc34b07e": {
           "type": "text",
           "settings": {
-            "question": "dfdfjdjfdj",
-            "anser": "wqwqwqw"
+            "question": "Question 2",
+            "anser": "Ansewer"
           }
         },
         "cd873494-6610-436a-be4e-2620d8dbae7c": {
           "type": "text",
           "settings": {
-            "question": "qaaa",
-            "anser": "aaaaaa"
+            "question": "Question 3",
+            "anser": "Ansewer 3"
           }
         }
       },
@@ -322,6 +330,48 @@
         "template--18613229912345__2b41831a-4ef3-4f7a-9488-2e14ecbfe4c4-1681964583ea36ee55-0",
         "433b67dd-61d2-4487-94b3-732cfc34b07e",
         "cd873494-6610-436a-be4e-2620d8dbae7c"
+      ],
+      "settings": {
+      }
+    },
+    "49228284-c83f-4cf7-9997-bcd9f21d52ab": {
+      "type": "mutiple-banner",
+      "blocks": {
+        "template--18613229912345__49228284-c83f-4cf7-9997-bcd9f21d52ab-16820419776b7c0c3a-0": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 1",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "halp_size": true,
+            "onefour_size": false
+          }
+        },
+        "44e91e9f-520c-47f5-a950-31b9177abe1f": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 2",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/silver-lamp-on-a-white-table-next-to-books.jpg",
+            "halp_size": false,
+            "onefour_size": true
+          }
+        },
+        "cd660362-927b-43b0-983c-da324897395b": {
+          "type": "type_banner",
+          "settings": {
+            "title1": "banner 3",
+            "subtitle1": "",
+            "image_choose1": "shopify:\/\/shop_images\/working-at-night.jpg",
+            "halp_size": true,
+            "onefour_size": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18613229912345__49228284-c83f-4cf7-9997-bcd9f21d52ab-16820419776b7c0c3a-0",
+        "44e91e9f-520c-47f5-a950-31b9177abe1f",
+        "cd660362-927b-43b0-983c-da324897395b"
       ],
       "settings": {
       }
@@ -345,6 +395,7 @@
     "bf7c431c-51c4-48c9-ad99-2b690ef5af1c",
     "9409973f-8917-483d-8c95-47beb96a0752",
     "2b41831a-4ef3-4f7a-9488-2e14ecbfe4c4",
+    "49228284-c83f-4cf7-9997-bcd9f21d52ab",
     "150a2fac-e8be-4405-9ce4-d44174738054"
   ]
 }
