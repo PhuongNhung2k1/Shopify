@@ -26,7 +26,11 @@ Theme Store optional settings
             {% endfor %}
           </div>
           <div class="feature-product-content">
-            <h3>{{ product.title | escape }}</h3>
+            {% if section.settings.change_title == '' %}
+             <h3>{{ product.title | escape }}</h3>  
+           {% else %}
+           <h3>{{ product.title | replace: product.title, section.settings.change_title }}</h3>
+          {% endif %}
             <span>
               {% if product.compare_at_price > product.price %}
                 {% if product.price_varies %}
@@ -76,6 +80,10 @@ Theme Store optional settings
         "type": "text",
         "id": "number_display",
         "label": " chose display product"
+      },{
+        "type": "textarea",
+        "id":"change_title",
+        "label": "Input title change"
       }
     ],
     "presets": [
