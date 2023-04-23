@@ -17,11 +17,10 @@
             </button>
           </div>
           <div class="mutiple-banner-image">
-            <img src="{{ block.settings.image_choose1 |image_url }}">
+            <img src="{{ block.settings.image_choose1 |image_url :width:400 }}">
           </div>
         </div>
       {% endif %}
-
       {%# size 1/4%}
       {% if block.settings.onefour_size == true %}
         <div class="mutiple-banner-sub col-4">
@@ -32,7 +31,7 @@
             </button>
           </div>
           <div class="mutiple-banner-image">
-            <img src="{{ block.settings.image_choose1 |image_url }}">
+            <img src="{{ block.settings.image_choose1 |image_url :width:400}}">
           </div>
         </div>
       {% endif %}

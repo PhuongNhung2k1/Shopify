@@ -1,0 +1,32 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="{{ 'ajax-show-popup.js' | asset_url }}" defer="defer"></script>
+<div id="div1">
+  <h2>Let jQuery AJAX Change This Text</h2>
+</div>
+{% for block in section.blocks %}
+  {% case block.type %}
+    {% when 'text' %}
+    <h2>
+      block.settings.show_popup
+    </h2>
+  {% endcase %}
+{% endfor %}
+
+<button>Get External Content</button>
+{% schema %}
+  {
+    "name": "Test show popup",
+    "settings": [
+      {
+        "type": "text",
+        "id": "show_popup",
+        "label": "Popup"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Test show popup"
+      }
+    ]
+  }
+{% endschema %}

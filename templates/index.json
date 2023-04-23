@@ -76,7 +76,8 @@
           "type": "text",
           "settings": {
             "title": "",
-            "subtitile": ""
+            "subtitile": "",
+            "btn_buy": ""
           }
         }
       },
@@ -201,6 +202,7 @@
           "settings": {
             "title": "Enjoy Winter Trend",
             "subtitile": "Discover snow latest collection",
+            "btn_buy": "",
             "image_choose": "shopify:\/\/shop_images\/house-plant-on-wooden-slat-wall.jpg",
             "image_mobile": "shopify:\/\/shop_images\/silver-lamp-on-a-white-table-next-to-books.jpg"
           }
@@ -380,7 +382,8 @@
       "type": "custom-feature-product",
       "settings": {
         "title": "Featured collection",
-        "collection": "automated-collection"
+        "collection": "automated-collection",
+        "number_display": "3"
       }
     }
   },

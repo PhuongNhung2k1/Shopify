@@ -1886,10 +1886,10 @@
     "main-product": {
       "name": "Product information",
       "blocks": {
-        "tags":{
-          "name":"Tags",
-          "settings":{
-            "show_tag":{
+        "tags": {
+          "name": "Tags",
+          "settings": {
+            "show_tag": {
               "label": "Enable show tags"
             }
           }
@@ -2372,34 +2372,6 @@
           "label": "Enable video looping"
         }
       }
-    },
-
-    "custom-feature-collection":{
-      "name": "Custom feature product collection",
-      "blocks": {
-        "custom-prod-collection":{
-          "name":"Custom featue product",
-          "settings": [
-            {
-              "type": "text",
-              "id": "title",
-              "label": "Heading",
-              "default": "Featured collection"
-            }, {
-              "id": "collection",
-              "type": "collection",
-              "label": "Collection"
-            }, {
-              "type": "text",
-              "id": "number_display",
-              "label": " chose display product"
-            }
-          ]
-        },
-          "presets": {
-            "name": "Custom feature product collection",
-          }
-
     },
     "main-register": {
       "name": "Registration"

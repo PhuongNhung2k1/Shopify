@@ -11,26 +11,22 @@ Theme Store optional settings
   {% if section.settings.title != blank %}
     <h2 class="featured-collection__title" style="text-align:center ">{{ section.settings.title | escape }}</h2>
   {% endif %}
-
   {%- assign collection = collections[section.settings.collection] -%}
   {%# get product from collection %}
-
   {% for product in collection.products limit: 6 %}
-    <a href="{{ product.url | within: collection }}" class="featured-collection-item">
       {% if product.featured_image != blank %}
         <div class="featured-collection__image"></div>
       {% endif %}
-
       <div class="lists-feature-product">
         {%# start item product %}
-        <div class="item-feature-product">
+        <div class="item-feature-product col-{{section.settings.number_display}}">
           <div class="feature-product-image">
             {% for image in product.images %}
               <img src="{{ image.src | product_img_url }}">
             {% endfor %}
           </div>
           <div class="feature-product-content">
-            <h3>Name : {{ product.title | escape }}</h3>
+            <h3>{{ product.title | escape }}</h3>
             <span>
               {% if product.compare_at_price > product.price %}
                 {% if product.price_varies %}
@@ -50,23 +46,27 @@ Theme Store optional settings
               {% endif %}
             </span>
           </div>
+          <form method="post" action="/cart/add" class="btn-add-to-cart">
+          <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
+          <input name="add" value="Add to cart" type="submit" />
+        </form>
+        </div>
         </div>
         {%# end item product %}
-      </div>
-    </a>
+
 {% else %}
   {% endfor %}
 </section>
 
 {% schema %}
   {
-    "name": "Featured collection",
     // "name": "t:sections.custom-feature-collection.name",
+    "name": "Heading feature ",
     "settings": [
       {
         "type": "text",
         "id": "title",
-        "label": "Heading",
+        "label": "t:sections.custom-feature-collection.settings.title.label",
         "default": "Featured collection"
       }, {
         "id": "collection",

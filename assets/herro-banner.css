@@ -49,7 +49,7 @@
 @media screen and (max-width: 768px) {
     
     .img-mobile {
-     display: block !important;
+     display: block;
     }
     .img-desktop {
         display: block;

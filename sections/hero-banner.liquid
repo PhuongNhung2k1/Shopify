@@ -7,20 +7,21 @@
       <div class="banner-container">
         <h1>{{ block.settings.title }}</h1>
         <p>{{ block.settings.subtitile }}</p>
-        <a href="">Shop now</a>
+        <a href="">{{ block.settings.btn_buy }}</a>
       </div>
     </div>
     <div class="banner-img">
       <h1>{{ block.settings.img }}</h1>
     </div>
+    {% when 'image_picker' %}
     {% # check condition for default display is desktop and else for mobile if different null %}
-    {% if block.settings.image_mobile != null %}
-      <div class="img-mobile">
-        <img class="img-hero-banner" src="{{ block.settings.image_mobile |image_url }}">
-      </div>
-    {% else %}
+    {% if block.settings.image_mobile == null %}
       <div class="img-desktop">
         <img class="img-hero-banner" src="{{ block.settings.image_choose |image_url }}">
+      </div>
+    {% else %}
+      <div class="img-mobile">
+        <img class="img-hero-banner" src="{{ block.settings.image_mobile |image_url }}">
       </div>
     {% endif %}
   {% endcase %}
@@ -37,11 +38,18 @@
             "type": "text",
             "id": "title",
             "label": "Title"
-          }, {
+          },
+          {
             "type": "textarea",
             "id": "subtitile",
             "label": "Note text"
-          }, {
+          },
+          {
+            "type": "text",
+            "id": "btn_buy",
+            "label": "Buton text"
+          },
+          {
             "type": "image_picker",
             "id": "image_choose",
             "label": "image picker"

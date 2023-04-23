@@ -1,17 +1,19 @@
 .mutiple-banner-container{
     display: flex;
     flex-wrap: row nowrap;
+    align-items: baseline;
 }
 
-img {
-    height: 400px;
-}
+/* .mutiple-banner-image {
+    height: 300px;
+} */
 .col-2 {
     width: calc(100%/2);
-    display: inline;
+    display: inline-block;
 }
 .col-4{
-    width: calc(100%/4);
+    width: calc(100%/4) ;
+    display: inline-block;
 }
 
 .mutiple-banner-sub .mutiple-banner-content{
@@ -45,6 +47,6 @@ img {
 /* css for mobile  */
 @media screen and (min-width: 750px) {
     .mutiple-banner-container{
-        width: 100%;
+
     }
 }
