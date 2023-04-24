@@ -1,0 +1,36 @@
+.show-popup-minicart {
+    width: 350px;
+    position: relative;
+    margin: auto;
+    align-items:  center;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.close-popup .icon-close-small {
+    position: absolute;
+    top :0;
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+.has-items .icon-close{
+    border: 1px solid #ccc;
+}
+.has-items li {
+    list-style-type: none;
+    height: 150px;
+    display: block;
+}
+
+.has-items button {
+    padding: 10px;
+}
+.has-items button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.has-items .icon-close {
+    width: 10px;
+    height: 10px;
+}

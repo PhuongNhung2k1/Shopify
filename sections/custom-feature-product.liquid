@@ -6,7 +6,12 @@ Theme Store required settings
 Theme Store optional settings
 - Heading: title of the featured collection section
 {%- endcomment -%}
+
+
 {{ 'test-feature-product.css' | asset_url | stylesheet_tag }}
+{{ 'popup-minicart.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'popup-minicart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'test-ajax1.js' | asset_url }}" defer="defer"></script>
 <section class="featured-collection">
   {% if section.settings.title != blank %}
     <h2 class="featured-collection__title" style="text-align:center ">{{ section.settings.title | escape }}</h2>
@@ -14,6 +19,7 @@ Theme Store optional settings
   {%- assign collection = collections[section.settings.collection] -%}
   {%# get product from collection %}
   {% for product in collection.products limit: 6 %}
+    <a href="{{ product.url | within: collection }}" class="featured-collection-item">
       {% if product.featured_image != blank %}
         <div class="featured-collection__image"></div>
       {% endif %}
@@ -50,17 +56,58 @@ Theme Store optional settings
               {% endif %}
             </span>
           </div>
-          <form method="post" action="/cart/add" class="btn-add-to-cart">
+      <form method="post" action="/cart/add" class="btn-add-to-cart">
           <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
-          <input name="add" value="Add to cart" type="submit" />
+          <input name="add" value="Add to cart" type="submit" onclick="loadMiniCart()" />
         </form>
+        
         </div>
         </div>
         {%# end item product %}
-
+</a>
 {% else %}
   {% endfor %}
 </section>
+
+<div class="show-popup-minicart">
+  <div class="close-popup" id="jsclosepoup" onclick="closePopup()">
+    <svg class="icon icon-close-small" style="height: 10px;" aria-hidden="true" focusable="false">
+      <use href="#icon-close" class="icon-close"  style="padding: 5px;">
+    </svg>
+  </div>
+  <div class="has-items" id="show-mini-cart">
+    <ul class="mini-products-list">  
+      {% for item in cart.items %}
+      <li class="item" id="cart-item-{{item.id}}">
+        <a href="{{item.url}}" title="{{item.title}}" class="product-image">
+          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}"></a>
+        <div class="product-details">
+          <p class="product-name"><a href="{{item.url}}">{{ item.product.title }}
+            {% if item.product.variants.size != 0 %}
+            {% unless item.variant.title contains 'Default' %}
+            {{ item.variant.title }}
+            {% endunless %}
+            {% endif %}</a></p>
+          <div class="cart-collateral"><span class="price">{{item.price | money}}</span> x {{item.quantity}}</div>
+        </div>
+        <a href="javascript&colon;void(0)" title="Remove This Item" class="btn-remove"><span class="zmdi zmdi-close"></span></a>
+      </li>
+      <hr style="visibility: visible;">
+      {% endfor %}
+    </ul>
+    <div class="summary">   
+      <p class="total">
+        <span class="label">Cart total :</span>
+        <span class="price"><b>{{cart.total_price | money}}</b></span> 
+      </p>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="window.location='/checkout'"><i class="icon-check"></i>Checkout </button>
+      <button class="btn text-cart" onclick="window.location='/cart'"><i class="icon-basket"></i>View cart</button>
+    </div>
+</div>
+</div>
+
 
 {% schema %}
   {
@@ -94,3 +141,4 @@ Theme Store optional settings
     ]
   }
 {% endschema %}
+<script src="{{ 'test-ajax1.js' | asset_url }}" defer="defer"></script>

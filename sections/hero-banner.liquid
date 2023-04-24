@@ -15,7 +15,7 @@
     </div>
     {% when 'image_picker' %}
     {% # check condition for default display is desktop and else for mobile if different null %}
-    {% if block.settings.image_mobile == null %}
+    {% if block.settings.image_mobile == '' %}
       <div class="img-desktop">
         <img class="img-hero-banner" src="{{ block.settings.image_choose |image_url }}">
       </div>
