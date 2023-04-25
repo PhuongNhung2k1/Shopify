@@ -6,12 +6,11 @@ Theme Store required settings
 Theme Store optional settings
 - Heading: title of the featured collection section
 {%- endcomment -%}
-
-
 {{ 'test-feature-product.css' | asset_url | stylesheet_tag }}
 {{ 'popup-minicart.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'popup-minicart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'test-ajax1.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'application.js' | asset_url }}" defer="defer"></script>
 <section class="featured-collection">
   {% if section.settings.title != blank %}
     <h2 class="featured-collection__title" style="text-align:center ">{{ section.settings.title | escape }}</h2>
@@ -56,15 +55,23 @@ Theme Store optional settings
               {% endif %}
             </span>
           </div>
-      <form method="post" action="/cart/add" class="btn-add-to-cart">
+          <a href="" id="loadcart" onclick="loadMiniCart()"></a>
+        <form method="post" action="/cart/add" class="btn-add-to-cart" >
           <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
-          <input name="add" value="Add to cart" type="submit" onclick="loadMiniCart()" />
+          <input name="add" value="Add to cart" type="submit" />
+          {%# add quick view %}
+          <div class="quick-view-button">
+            <a class="quick-view" data-handle="{{ product.handle }}" href="javascript:void(0);">
+              <svg viewBox="0 0 20 20" style="height: 20px; width: 20px;" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
+                <path d="M17.928 9.628c-.091-.229-2.317-5.628-7.928-5.628s-7.838 5.399-7.93 5.628a1.017 1.017 0 0 0 0 .744c.093.229 2.319 5.628 7.93 5.628s7.837-5.399 7.928-5.628a1.017 1.017 0 0 0 0-.744zm-7.928 4.372a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-6a2 2 0 1 0 .002 4.001 2 2 0 0 0-.003-4.001z"></path>
+              </svg>
+            Quick View</a></div>
         </form>
-        
         </div>
         </div>
         {%# end item product %}
 </a>
+
 {% else %}
   {% endfor %}
 </section>
@@ -79,8 +86,9 @@ Theme Store optional settings
     <ul class="mini-products-list">  
       {% for item in cart.items %}
       <li class="item" id="cart-item-{{item.id}}">
-        <a href="{{item.url}}" title="{{item.title}}" class="product-image">
-          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}"></a>
+        <a href="{{item.url}}" id="productInfoAnchor" title="{{item.title}}" class="product-image">
+          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}">
+          </a>
         <div class="product-details">
           <p class="product-name"><a href="{{item.url}}">{{ item.product.title }}
             {% if item.product.variants.size != 0 %}
