@@ -24,6 +24,7 @@ function quickView() {
       $('.qv-product-type').text(type);
       $('.qv-product-description').html(desc);
       $('.view-product').attr('href', url);
+      
       var imageCount = $(images).length;
       $(images).each(function (i, image) {
         if (i == imageCount - 1) {
@@ -151,37 +152,26 @@ function quickView() {
             });
           }
         });
-
         $('.fancybox-wrap').css('overflow', 'hidden !important');
-
       },
       'afterShow': function () {
         $('#quick-view').hide().html(content).css('opacity', '1').fadeIn(function () {
           $('.qv-product-images').addClass('loaded');
         });
       },
-
       'afterClose': function () {
-
         $('#quick-view').removeClass().empty();
-
       }
-
     });
-
   });
-
 };
-
- 
-
 $(window).resize(function () {
-
   if ($('#quick-view').is(':visible')) {
-
     $('.qv-product-images').slick('setPosition');
-
   }
-
 });
-
+function miniCart(){
+  $('#mini-cart').click(function (){
+    alert('add cart success');
+  });
+}
