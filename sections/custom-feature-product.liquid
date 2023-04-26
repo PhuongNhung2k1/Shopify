@@ -29,6 +29,7 @@ Theme Store optional settings
             {% for image in product.images %}
               <img src="{{ image.src | product_img_url }}">
             {% endfor %}
+            
           </div>
           <div class="feature-product-content">
             {% if section.settings.change_title == '' %}
@@ -56,10 +57,20 @@ Theme Store optional settings
             </span>
           </div>
           <a href="" id="loadcart" onclick="loadMiniCart()"></a>
-        <form method="post" action="/cart/add" class="btn-add-to-cart" >
-          <input name="id" value="{{ product.variants.first.id }}" type="hidden" />
-          <input name="add" value="Add to cart" type="submit" />
-          {%# add quick view %}
+        {%# <form method="post" action="/cart/add" class="btn-add-to-cart" ></form>%}
+        <form method="post"  action="/cart/add" class="btn-add-to-cart" ></form>
+        {% if product.compare_at_price > product.price %}
+        Sale
+    {%endif %}
+  </p>
+  <div class="add-cart m-l-10 " data-product = {{product.variants.size}}>
+    {% if product.variants.size <= 1%}
+      <button quantity="1" style="padding:10px" item-id={{product.selected_or_first_available_variant.id}} id="add-to-cart-button" class="add-to-cart">Add To Cart</button>
+    {% else %}
+      <a class="add-to-options" href="{{ product.url | within: collection }}"> Add to Options</a>
+    {%endif %}
+  </div>
+          {%# add quick view <input name="add" value="Add to cart" type="submit" /> %}
           <div class="quick-view-button">
             <a class="quick-view" data-handle="{{ product.handle }}" href="javascript:void(0);">
               <svg viewBox="0 0 20 20" style="height: 20px; width: 20px;" class="Polaris-Icon__Svg_375hu" focusable="false" aria-hidden="true">
@@ -75,48 +86,6 @@ Theme Store optional settings
 {% else %}
   {% endfor %}
 </section>
-
-<div class="show-popup-minicart">
-  <div class="close-popup" id="jsclosepoup" onclick="closePopup()">
-    <svg class="icon icon-close-small" style="height: 10px;" aria-hidden="true" focusable="false">
-      <use href="#icon-close" class="icon-close"  style="padding: 5px;">
-    </svg>
-  </div>
-  <div class="has-items" id="show-mini-cart">
-    <ul class="mini-products-list">  
-      {% for item in cart.items %}
-      <li class="item" id="cart-item-{{item.id}}">
-        <a href="{{item.url}}" id="productInfoAnchor" title="{{item.title}}" class="product-image">
-          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}">
-          </a>
-        <div class="product-details">
-          <p class="product-name"><a href="{{item.url}}">{{ item.product.title }}
-            {% if item.product.variants.size != 0 %}
-            {% unless item.variant.title contains 'Default' %}
-            {{ item.variant.title }}
-            {% endunless %}
-            {% endif %}</a></p>
-          <div class="cart-collateral"><span class="price">{{item.price | money}}</span> x {{item.quantity}}</div>
-        </div>
-        <a href="javascript&colon;void(0)" title="Remove This Item" class="btn-remove"><span class="zmdi zmdi-close"></span></a>
-      </li>
-      <hr style="visibility: visible;">
-      {% endfor %}
-    </ul>
-    <div class="summary">   
-      <p class="total">
-        <span class="label">Cart total :</span>
-        <span class="price"><b>{{cart.total_price | money}}</b></span> 
-      </p>
-    </div>
-    <div class="actions">
-      <button class="btn" onclick="window.location='/checkout'"><i class="icon-check"></i>Checkout </button>
-      <button class="btn text-cart" onclick="window.location='/cart'"><i class="icon-basket"></i>View cart</button>
-    </div>
-</div>
-</div>
-
-
 {% schema %}
   {
     // "name": "t:sections.custom-feature-collection.name",

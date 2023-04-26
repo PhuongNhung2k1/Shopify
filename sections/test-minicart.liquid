@@ -1,9 +1,16 @@
-<div class="has-items">
+<div class="show-popup-minicart">
+  <div class="close-popup" id="jsclosepoup" onclick="closePopup()">
+    <svg class="icon icon-close-small" style="height: 10px;" aria-hidden="true" focusable="false">
+      <use href="#icon-close" class="icon-close"  style="padding: 5px;">
+    </svg>
+  </div>
+  <div class="has-items" id="show-mini-cart">
     <ul class="mini-products-list">  
       {% for item in cart.items %}
       <li class="item" id="cart-item-{{item.id}}">
-        <a href="{{item.url}}" title="{{item.title}}" class="product-image">
-          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}"></a>
+        <a href="{{item.url}}" id="productInfoAnchor" title="{{item.title}}" class="product-image">
+          <img src="{{ item.image | product_img_url: 'small' }}" alt="{{item.title}}">
+          </a>
         <div class="product-details">
           <p class="product-name"><a href="{{item.url}}">{{ item.product.title }}
             {% if item.product.variants.size != 0 %}
@@ -15,23 +22,18 @@
         </div>
         <a href="javascript&colon;void(0)" title="Remove This Item" class="btn-remove"><span class="zmdi zmdi-close"></span></a>
       </li>
+      <hr style="visibility: visible;">
       {% endfor %}
     </ul>
     <div class="summary">   
-      <div>
-      <hr style="visibility: visible;">
-      <p class="stilefont"style="font-size:13px; text-align:center; padding-left: 10px; padding-right: 10px;line-height: 1.3;"><b>Consegna gratuita</b> in 24/48h in <b>Italia</b> per ordini superiori ai 120€ altimetri il costo è di 10€.</p>
-<hr style="visibility: visible;">
-<p class="stilefont"style="font-size:13px; text-align:center; padding-left: 10px; padding-right: 10px;line-height: 1.3;"> <b>Consegna gratuita in giornata </b> in provincia di <a href="https://www.fermento24.com/pages/spedizione" id="category-link" style="color: #000000; font-weight:bold; text-decoration: underline;"><b>Napoli*</b></a> e<a href="https://www.fermento24.com/pages/spedizione" id="category-link" style="color: #000000; font-weight:bold; text-decoration: underline;"><b> Caserta*</b></a> per ordini superiori ai 25€ altrimenti il costo è di 3.50€</p>
-<hr style="visibility: visible;">
-      </div>
       <p class="total">
-        <span class="label">{{ 'cart.general.cart_total' | t }}</span>
-        <span class="price">{{cart.total_price | money}}</span> 
+        <span class="label">Cart total :</span>
+        <span class="price"><b>{{cart.total_price | money}}</b></span> 
       </p>
     </div>
     <div class="actions">
-      <button class="btn" onclick="window.location='/checkout'"><i class="icon-check"></i>{{ 'cart.general.checkout' | t }}</button>
-      <button class="btn text-cart" onclick="window.location='/cart'"><i class="icon-basket"></i>{{ 'cart.general.view_cart' | t }}</button>
+      <button class="btn" onclick="window.location='/checkout'"><i class="icon-check"></i>Checkout </button>
+      <button class="btn text-cart" onclick="window.location='/cart'"><i class="icon-basket"></i>View cart</button>
     </div>
-  </div>
+</div>
+</div>

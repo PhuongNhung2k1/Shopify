@@ -17,3 +17,4 @@ jQuery.post('/cart/add.js', {
 Shopify.onCartUpdate = function(cart) {
     alert('There are now ' + cart.item_count + ' items in the cart.');
   };  
+  // test popup as quickview page 

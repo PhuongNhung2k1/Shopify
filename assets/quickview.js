@@ -26,9 +26,10 @@ function quickView() {
       $('.view-product').attr('href', url);
       
       var imageCount = $(images).length;
+    
       $(images).each(function (i, image) {
         if (i == imageCount - 1) {
-          var image_embed = '<div><img class="lazyload" data-src="' + image + '"></div>';
+          var image_embed = '<div><img src="' + image + '"></div>';
           image_embed = image_embed.replace('.jpg', '_800x.jpg').replace('.png', '_800x.png');
           $('.qv-product-images').append(image_embed);
           $('.qv-product-images').slick({
@@ -37,10 +38,6 @@ function quickView() {
             'respondTo': 'min',
             'useTransform': false
           }).css('opacity', '1');
-        } else {
-          image_embed = '<div><img class="lazyload" data-src="' + image + '"></div>';
-          image_embed = image_embed.replace('.jpg', '_800x.jpg').replace('.png', '_800x.png');
-          $('.qv-product-images').append(image_embed);
         }
       });
       $(options).each(function (i, option) {

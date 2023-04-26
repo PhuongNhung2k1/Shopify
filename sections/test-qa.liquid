@@ -7,9 +7,18 @@
   {% for block in section.blocks %}
     {% case block.type %}
       {% when "text" %}
+      {{ block.settings.number_anser }}
+      {% assign number_anser = block.settings.number_anser %}
+      {% assign n = number_anser | size %}
       <button class="accordion">{{ block.settings.question }}
       </button>
       <div class="accordion-content">
+        <li class="show-anser">
+          {{ block.settings.anser }}
+        </li><br>
+        <li class="show-anser">
+          {{ block.settings.anser }}
+        </li><br>
         <li class="show-anser">
           {{ block.settings.anser }}
         </li><br>
@@ -35,6 +44,10 @@
             "type": "textarea",
             "id": "anser",
             "label": "Ansewer"
+          }, {
+            "type": "number",
+            "id": "number_anser",
+            "label": "Chose question u want add?"
           }
         ]
       }
